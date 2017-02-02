@@ -9,12 +9,8 @@ The data comes from the UCI Machine Learning Database.
 2. cd into the dlnd-your-first-network folder that you just cloned.
 3. Download anaconda or miniconda based on the instructions in the Anaconda lesson.
 4. Create a new conda environment:
-    ```
-    conda create --name dlnd python=3
-    Enter your new environment:
-    Mac/Linux: >> source activate dlnd
-    Windows: >> activate dlnd
-    ```
+    `conda create --name dlnd python=3`
+    `source activate dlnd`
 5. Ensure you have numpy, matplotlib, pandas, and jupyter notebook installed by doing the following:
     `conda install numpy matplotlib pandas jupyter notebook`
 6. Run the following to open up the notebook:
