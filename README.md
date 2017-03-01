@@ -4,3 +4,4 @@ This repo contains all projects for the [udacity's deep learning foundations nan
 # Projects
 
 1. [Your First Neural Network](https://github.com/mantelsolutions/nd101/tree/master/DLND-your-first-network)
+2. [Image classification](https://github.com/mantelsolutions/nd101/tree/master/DLND-image-classification)
