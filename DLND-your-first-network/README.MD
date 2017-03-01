@@ -15,3 +15,21 @@ The data comes from the UCI Machine Learning Database.
     `conda install numpy matplotlib pandas jupyter notebook`
 6. Run the following to open up the notebook:
     `jupyter notebook dlnd-your-first-neural-network.ipynb`
+
+## Activation functions
+
+### Rectified Linear Units
+
+f(x) = max(x,0)
+
+A rectified linear unit has output 0 if the input is less than 0, and raw output otherwise
+
+#### Drawbacks
+
+It's possible that a large gradient can set the weights such that a ReLU unit will always be 0. These "dead" units will always be 0 and a lot of computation will be wasted in training.
+
+This will happen if the learning rate was too high.
+
+### Softmax
+
+The softmax function squashes the outputs of each unit to be between 0 and 1, just like a sigmoid. It also divides each output such that the total sum of the outputs is equal to 1.
