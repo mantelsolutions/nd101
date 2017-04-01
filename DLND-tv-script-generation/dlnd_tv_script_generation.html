@@ -13030,7 +13030,7 @@ Model Trained and Saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -13069,7 +13069,7 @@ Model Trained and Saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_tensors</span><span class="p">(</span><span class="n">loaded_graph</span><span class="p">):</span>
@@ -13125,7 +13125,7 @@ Model Trained and Saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pick_word</span><span class="p">(</span><span class="n">probabilities</span><span class="p">,</span> <span class="n">int_to_vocab</span><span class="p">):</span>
@@ -13136,8 +13136,17 @@ Model Trained and Saved
 <span class="sd">    :return: String of the predicted word</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># TODO: Implement Function</span>
+    <span class="c1"># implementation according to review comment, so that there&#39;s more randomness for choosing the words</span>
+    <span class="c1"># instead of always choosing the word with the highest prob.</span>
+    
+    <span class="n">vocab_keys</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">probabilities</span><span class="p">))</span>
+    <span class="n">random_key</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">vocab_keys</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">probabilities</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">int_to_vocab</span><span class="p">[</span><span class="n">random_key</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">result</span>
+    
     <span class="c1"># Pick the word from dict witch has the highest probabillity</span>
-    <span class="k">return</span> <span class="n">int_to_vocab</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">probabilities</span><span class="p">)]</span>
+    <span class="c1">#return int_to_vocab[np.argmax(probabilities)]</span>
 
 
 <span class="sd">&quot;&quot;&quot;</span>
@@ -13179,7 +13188,7 @@ Model Trained and Saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gen_length</span> <span class="o">=</span> <span class="mi">200</span>
@@ -13240,18 +13249,20 @@ Model Trained and Saved
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>moe_szyslak:(into phone) gotcha ya down for forty bucks. good luck your eminence.
-moe_szyslak: sorry, homer.
-homer_simpson:(getting nervous) uh, hello. lisa hates me! and i gotta&#34;(into an idiot.
-barney_gumble: oh, i&#39;m sorry, mr. s., but you know, i gotta check everybody.
-moe_szyslak:(dead serious) the results came back. but uh, i know, but i want to hear.
-patty_bouvier: in this world go?
-moe_szyslak: aw, that-- that&#39;s my old spit in city hall is real being.
-lenny_leonard: yeah, someone who makes our alcoholism seem
-barney_gumble: but moe! homer! i&#39;ll stay for one beer.
-moe_szyslak:(totally calm) oh great, right. and i was just using it as a compliment!(chuckle) three beers!
-moe_szyslak: it&#39;s a snap when you use certified contractors.
-homer_simpson:(to self, in awe) wow, a free beer.(low voice) oh, you gotta stop that.
+<pre>moe_szyslak:(sobs) no! no! help me! help!
+warm_female_voice: if your face is in the face is that one guy who saw what dr.(gasps) precious bucks, we gotta turn into an office.
+homer_simpson: me! geez.
+lenny_leonard: homer, i&#39;m proud of you. you&#39;ve prolonged this celebrity marriage at least through playoff season.
+moe_szyslak: barney, don&#39;t steal any beer while i&#39;m gone.
+barney_gumble:(calling out) hey, moe.
+moe_szyslak: well, well, you can&#39;t talk that till i belong you don&#39;t get that back till you bring me a photo of yourself with a smiling child.
+moe_szyslak: here you go. duff adequate.
+homer_simpson: you guys are getting at me and a man. the thing.
+homer_simpson: how about you, carl? what am i gonna do?
+barney_gumble: hey, a duel? i just got held up in traffic.
+apu_nahasapeemapetilon: i don&#39;t think you&#39;re taking unfair advantage of my generous offer.
+homer_simpson: shut it out.
+carl_carlson: now, let&#39;s
 </pre>
 </div>
 </div>
