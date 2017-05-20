@@ -7,3 +7,4 @@ This repo contains all projects for the [udacity's deep learning foundations nan
 2. [Image classification](https://github.com/mantelsolutions/nd101/tree/master/DLND-image-classification)
 3. [TV script generation](https://github.com/mantelsolutions/nd101/tree/master/DLND-tv-script-generation)
 4. [Language translation](https://github.com/mantelsolutions/nd101/tree/master/DLND-language-translation)
+5. [Face generation](https://github.com/mantelsolutions/nd101/tree/master/DLND-face-generation)
